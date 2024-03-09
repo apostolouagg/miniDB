@@ -1,32 +1,28 @@
-## ΣΥΣΤΗΜΑΤΑ ΔΙΑΧΕΙΡΙΣΗΣ ΒΑΣΕΩΝ ΔΕΔΟΜΕΝΩΝ 2021-2022
+## DATABASE MANAGEMENT SYSTEMS 2021-2022
 ### PDF: [BASEIS_DEDOMENWN.pdf](https://github.com/apostolouagg/miniDB/files/14547063/BASEIS_DEDOMENWN.pdf)
 
-### Άσκηση ACID
-Για την άσκηση ACID δημιουργήσαμε 3 συναρτήσεις στο αρχείο database.py:
-• begin_transaction (εκκίνηση διαδικασίας – προσθήκη checkpoint)
-• rollback (αναίρεση αλλαγών)
-• commit (σώσιμο αλλαγών)
-Αρχικά μέσα στη συνάρτηση __init__ δηλώνουμε ένα flag checkpoint το οποίο θα μας χρησιμεύσει στο να ξέρουμε αν υπάρχει κάποιο checkpoint ή όχι. Ύστερα στο αρχείο mdb.py, προσθέσαμε στα keywords (στη συνάρτηση interpret) 3 καινούργια keywords. Το begin transaction, το rollback και το commit. Αυτό για να μπορούμε να τα χρησιμοποιήσουμε.
-Στην begin_transaction πρώτα ελέγχουμε αν το checkpoint είναι true. Αν είναι τότε, σημαίνει ότι υπάρχει ήδη ένα checkpoint και το transaction έχει ξεκινήσει επομένως, εμφανίζεται error. Αν όχι τότε δημιουργούμε ένα κάνοντας το checkpoint = True.
-Στην rollback πρώτα ελέγχουμε αν το checkpoint είναι true. Αν είναι τότε, κάνουμε το checkpoint = False, δηλαδή αφαιρούμε το checkpoint, και φορτώνουμε την ήδη υπάρχουσα βάση που δεν έχει, προφανώς, καμία αλλαγή καλώντας την self.load_database(). Αν δεν είναι τότε, εμφανίζεται error αφού δεν υπάρχει κάποιο checkpoint για να κάνουμε rollback και να επιστρέψουμε.
-Στην commit πάλι ελέγχουμε πρώτα τι είναι το checkpoint. Αν είναι true τότε, αφαιρούμε το checkpoint κάνοντάς το false και στη συνέχεια κάνουμε save την όποια αλλαγή υπάρχει καλώντας την self.save_database(). Αν είναι false τότε, εμφανίζεται error καθώς δεν υπάρχει κάτι για να κάνουμε commit.
+### ACID Exercise
 
--- Παράδειγμα εκτέλεσης
+For the ACID exercise, we created 3 functions in the database.py file: 
+• begin_transaction (initiates the transaction process – adds a checkpoint) 
+• rollback (reverts changes) 
+• commit (saves changes) 
+Initially, inside the init function, we declare a flag called checkpoint, which will help us know if there is a checkpoint or not. Then, in the mdb.py file, we added 3 new keywords (begin transaction, rollback, and commit) to the keywords (in the interpret function) so that we can use them. 
+In the begin_transaction function, we first check if the checkpoint is true. If it is, it means that there is already a checkpoint and the transaction has already started, so an error is displayed. If not, we create a checkpoint by setting checkpoint = True. 
+In the rollback function, we first check if the checkpoint is true. If it is, we set checkpoint = False, meaning we remove the checkpoint, and load the existing database, which obviously has no changes, by calling self.load_database(). If it is false, an error is displayed as there is no checkpoint to rollback and revert changes. 
+In the commit function, we again check what the checkpoint is. If it is true, we remove the checkpoint by setting it to false, and then save any changes by calling self.save_database(). If it is false, an error is displayed as there is nothing to commit.
+
+-- Execution Example
 
 ![image](https://github.com/apostolouagg/miniDB/assets/61296853/720ee72c-5e23-4a30-9e1a-7fedaffc618e)
 
-### Άσκηση Distinct
-Αρχικά βάζουμε μια μεταβλητή distinct = False. Έπειτα ελέγχουμε αν ο χρήστης έγραψε τη λέξη distinct ως εντολή. Αν ναι τότε την αφαιρούμε από τις εντολές (έτσι ώστε να λειτουργήσει ομαλά ο υπόλοιπος κώδικας), όμως κάνουμε το distinct = True.
-Λίγο παρακάτω δημιουργούμε μια if όπου τσεκάρουμε αν έχει γράψει τη λέξη distinct ο χρήστης και μέσα της γράψαμε όλο τον κώδικα που χρειάζεται.
-Αρχικά, δημιουργούμε μια λίστα η οποία θα πάρει μέσα της τα δεδομένα της κάθε γραμμής και τα index τους. Τρέχουμε μια for μέσα στη rows, η οποία περιέχει το index των εγγραφών που θα εμφανιστούν. Σε κάθε επανάληψη γίνεται το εξής:
-Προσθέτουμε στη λίστα rowsData 2 στοιχεία. Το row που είναι το id της γραμμής του table και μια κενή λίστα η οποία θα δεχτεί τα στοιχεία μιας γραμμής.
-Μετά με άλλη μια for που περνάει από κάθε στήλη του table και μέσα της εκτελούμε το rowsData[-1][1].append(self.data[row][colID]).
-Αυτό σημαίνει ότι στο πιο πρόσφατο στοιχείο της λίστας rowsData ([rows,[]]) κάνουμε target την κενή λίστα και της προσθέτουμε τα στοιχεία της συγκεκριμένης γραμμής.
-Οπότε τώρα έχουμε μια λίστα με τα στοιχεία του table και ακολουθεί το φιλτράρισμα.
-Δημιουργούμε 2 λίστες, την newRowsID που θα δεχτεί το index των γραμμών που θα εμφανίσουμε στο τέλος, και την newRows που θα δεχτεί τα στοιχεία (values) που θα εμφανίσουμε στο τέλος.
-Τρέχουμε μια for στη rowsData και παίρνουμε το idx (index) και το row (τα στοιχεία). Αν τα στοιχεία ΔΕΝ υπάρχουν μέσα στη newRows τότε βάζουμε τα στοιχεία στη newRows και το index τους στη newRowsID. Με αυτή την εντολή εξετάζουμε αν υπάρχει κάτι 2 φορές μέσα στις τελικές λίστες, επομένως πραγματοποιείται επιτυχώς το φιλτράρισμα.
+### Distinct Exercise
 
--- Παράδειγμα εκτέλεσης
+Initially, we set a variable distinct = False. Then we check if the user typed the word distinct as a command. If yes, we remove it from the commands (so that the rest of the code works smoothly), but we set distinct = True. A little later, we create an if statement where we check if the user wrote the word distinct, and inside it, we wrote all the code needed. 
+Firstly, we create a list that will take the data of each row and their index. We run a for loop through the rows, which contain the index of the records to be displayed. In each iteration, the following happens: We add to the rowsData list 2 elements. The row, which is the id of the table row, and an empty list that will accept the elements of a row. Then, with another for loop going through each column of the table, inside we execute rowsData[-1][1].append(self.data[row][colID]). This means that in the most recent element of the rowsData list ([rows,[]]), we target the empty list and add the elements of the current row to it. So now we have a list with the elements of the table, and filtering follows. 
+We create 2 lists, newRowsID, which will accept the index of the rows to be displayed in the end, and newRows, which will accept the values to be displayed in the end. We run a for loop on rowsData and take the idx (index) and row (the elements). If the elements do NOT exist in newRows, we add the elements to newRows and their index to newRowsID. With this command, we check if something exists twice in the final lists, so the filtering is successful.
+
+-- Execution Example
 
 ![image](https://github.com/apostolouagg/miniDB/assets/61296853/5b3cd087-4c3e-4803-8d96-a787ac7c77c0)
 
