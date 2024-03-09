@@ -4,9 +4,13 @@
 ### ACID Exercise
 
 For the ACID exercise, we created 3 functions in the database.py file: 
+
 • begin_transaction (initiates the transaction process – adds a checkpoint) 
+
 • rollback (reverts changes) 
+
 • commit (saves changes) 
+
 Initially, inside the init function, we declare a flag called checkpoint, which will help us know if there is a checkpoint or not. Then, in the mdb.py file, we added 3 new keywords (begin transaction, rollback, and commit) to the keywords (in the interpret function) so that we can use them. 
 In the begin_transaction function, we first check if the checkpoint is true. If it is, it means that there is already a checkpoint and the transaction has already started, so an error is displayed. If not, we create a checkpoint by setting checkpoint = True. 
 In the rollback function, we first check if the checkpoint is true. If it is, we set checkpoint = False, meaning we remove the checkpoint, and load the existing database, which obviously has no changes, by calling self.load_database(). If it is false, an error is displayed as there is no checkpoint to rollback and revert changes. 
