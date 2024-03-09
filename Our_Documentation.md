@@ -1,11 +1,6 @@
 ## ΣΥΣΤΗΜΑΤΑ ΔΙΑΧΕΙΡΙΣΗΣ ΒΑΣΕΩΝ ΔΕΔΟΜΕΝΩΝ 2021-2022
 ### PDF: [BASEIS_DEDOMENWN.pdf](https://github.com/apostolouagg/miniDB/files/14547063/BASEIS_DEDOMENWN.pdf)
 
-### Ομάδα:
-Αγγελική Αποστόλου, ΑΜ Π19015 
-
-Αντωνία Γιαννουλάκη, ΑΜ Π19251
-
 ### Άσκηση ACID
 Για την άσκηση ACID δημιουργήσαμε 3 συναρτήσεις στο αρχείο database.py:
 • begin_transaction (εκκίνηση διαδικασίας – προσθήκη checkpoint)
