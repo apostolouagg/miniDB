@@ -15,7 +15,7 @@
 Στην commit πάλι ελέγχουμε πρώτα τι είναι το checkpoint. Αν είναι true τότε, αφαιρούμε το checkpoint κάνοντάς το false και στη συνέχεια κάνουμε save την όποια αλλαγή υπάρχει καλώντας την self.save_database(). Αν είναι false τότε, εμφανίζεται error καθώς δεν υπάρχει κάτι για να κάνουμε commit.
 
 -- Παράδειγμα εκτέλεσης
-
+![image](https://github.com/apostolouagg/miniDB/assets/61296853/720ee72c-5e23-4a30-9e1a-7fedaffc618e)
 
 ### Άσκηση Distinct
 Αρχικά βάζουμε μια μεταβλητή distinct = False. Έπειτα ελέγχουμε αν ο χρήστης έγραψε τη λέξη distinct ως εντολή. Αν ναι τότε την αφαιρούμε από τις εντολές (έτσι ώστε να λειτουργήσει ομαλά ο υπόλοιπος κώδικας), όμως κάνουμε το distinct = True.
@@ -28,4 +28,10 @@
 Δημιουργούμε 2 λίστες, την newRowsID που θα δεχτεί το index των γραμμών που θα εμφανίσουμε στο τέλος, και την newRows που θα δεχτεί τα στοιχεία (values) που θα εμφανίσουμε στο τέλος.
 Τρέχουμε μια for στη rowsData και παίρνουμε το idx (index) και το row (τα στοιχεία). Αν τα στοιχεία ΔΕΝ υπάρχουν μέσα στη newRows τότε βάζουμε τα στοιχεία στη newRows και το index τους στη newRowsID. Με αυτή την εντολή εξετάζουμε αν υπάρχει κάτι 2 φορές μέσα στις τελικές λίστες, επομένως πραγματοποιείται επιτυχώς το φιλτράρισμα.
 
-Παράδειγμα εκτέλεσης
+-- Παράδειγμα εκτέλεσης
+![image](https://github.com/apostolouagg/miniDB/assets/61296853/5b3cd087-4c3e-4803-8d96-a787ac7c77c0)
+![image](https://github.com/apostolouagg/miniDB/assets/61296853/19746fb9-a92c-4ce3-b25a-f7ea61ece1e4)
+![image](https://github.com/apostolouagg/miniDB/assets/61296853/d541986e-456c-41c4-a715-773b5e8bc997)
+![image](https://github.com/apostolouagg/miniDB/assets/61296853/fb86cbcf-509c-4304-a949-62721f053b39)
+![image](https://github.com/apostolouagg/miniDB/assets/61296853/337f03a6-8e1f-4f52-a8a7-abbc031c3e9b)
+![image](https://github.com/apostolouagg/miniDB/assets/61296853/0805c057-1404-4e64-a035-0878672e0332)
