@@ -43,3 +43,6 @@
 ![image](https://github.com/apostolouagg/miniDB/assets/61296853/337f03a6-8e1f-4f52-a8a7-abbc031c3e9b)
 
 ![image](https://github.com/apostolouagg/miniDB/assets/61296853/0805c057-1404-4e64-a035-0878672e0332)
+
+
+### PDF: [BASEIS_DEDOMENWN.pdf](https://github.com/apostolouagg/miniDB/files/14547063/BASEIS_DEDOMENWN.pdf)
