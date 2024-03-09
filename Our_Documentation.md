@@ -1,5 +1,5 @@
 ## DATABASE MANAGEMENT SYSTEMS 2021-2022
-### PDF: [BASEIS_DEDOMENWN.pdf](https://github.com/apostolouagg/miniDB/files/14547063/BASEIS_DEDOMENWN.pdf)
+### PDF: [DATABASE MANAGEMENT SYSTEMS 2021-2022.pdf](https://github.com/apostolouagg/miniDB/files/14547256/DATABASE.MANAGEMENT.SYSTEMS.2021-2022.pdf)
 
 ### ACID Exercise
 
