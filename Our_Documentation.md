@@ -1,4 +1,5 @@
 ## DATABASE MANAGEMENT SYSTEMS 2021-2022
+### PDF: [ΣΥΣΤΗΜΑΤΑ ΔΙΑΧΕΙΡΙΣΗΣ ΒΑΣΕΩΝ ΔΕΔΟΜΕΝΩΝ 2021-2022.pdf](https://github.com/apostolouagg/miniDB/files/14550250/2021-2022.pdf) 
 ### PDF: [DATABASE MANAGEMENT SYSTEMS 2021-2022.pdf](https://github.com/apostolouagg/miniDB/files/14547256/DATABASE.MANAGEMENT.SYSTEMS.2021-2022.pdf)
 
 ### ACID Exercise
